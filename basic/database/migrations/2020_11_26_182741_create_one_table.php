@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSanKyisTable extends Migration
+class CreateOneTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateSanKyisTable extends Migration
      */
     public function up()
     {
-        Schema::create('san_kyis', function (Blueprint $table) {
+        Schema::create('one', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("name");
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateSanKyisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('san_kyis');
+        Schema::dropIfExists('one');
     }
 }
