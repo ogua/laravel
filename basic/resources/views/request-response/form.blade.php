@@ -66,6 +66,20 @@
                     </div>
                 </div>
             </div>
+            @auth
+                <div class="col-12 col-md-6">
+                    <div class="card my-5">
+                        <div class="card-body">
+                            {{ Auth::user() }}
+                            <br><br>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button class="btn btn-outline-primary">Log Out</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endauth
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['create','store']);
+        $this->middleware('isMe')->only(['create']);
+    }
+
     public function create(){
         return view("request-response.form");
     }
@@ -54,5 +60,11 @@ class FormController extends Controller
 
     }
 
+    public function updateMultiple(){
+
+        $current_item = 1;
+        $currentItem = 1;
+
+    }
 
 }

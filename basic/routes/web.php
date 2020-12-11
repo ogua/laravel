@@ -56,3 +56,10 @@ Route::get("form-edit/{id}","FormController@edit")->name("form.edit");
 Route::post("form-update/{id}","FormController@update")->name("form.update");
 
 Route::resource("san-kyi","SanKyiController");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::view("/denied","denied")->name("denied");
+Route::resource("student","StudentController");
