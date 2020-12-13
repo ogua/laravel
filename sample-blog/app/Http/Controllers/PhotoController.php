@@ -35,7 +35,27 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            "photo.*" => "mimetypes:image/jpeg,image/png"
+        ]);
+
+        $fileNameArr = [];
+        foreach ($request->file("photo") as $file){
+            $newFileName = uniqid()."_profile.".$file->getClientOriginalExtension();
+            array_push($fileNameArr,$newFileName);
+            $dir = "/public/article/";
+            $file->storeAs($dir,$newFileName);
+        }
+
+        foreach ($fileNameArr as $f){
+            $photo = new Photo();
+            $photo->article_id  = $request->article_id;
+            $photo->location = $f;
+            $photo->save();
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +100,7 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        $photo->delete();
+        return redirect()->back();
     }
 }

@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@section("head")
+    <style>
+        .article-thumbnail{
+            margin-top: 10px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border-radius: 0.25rem;
+            background-size: 200%;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="container">
         <div class="row ">
@@ -52,8 +64,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @inject("users","App\User")
-                            @inject("photo","App\Photo")
+
+
                             @foreach($articles as $article)
                                 <tr>
                                     <td>{{ $article->id }}</td>
@@ -61,11 +73,13 @@
                                     <td>
                                         {{ substr($article->description,0,80) }} .....
                                         <br>
-                                        @foreach($photo->where("article_id",$article->id)->get() as $img)
-                                            <img src="{{ asset("storage/article/".$img->location) }}" style="width: 50px" alt="">
+                                        @foreach($article->getPhotos as $img)
+                                            <div class="article-thumbnail shadow-sm" style="background-image:url('{{ asset("storage/article/".$img->location) }}') "></div>
                                         @endforeach
                                     </td>
-                                    <td class="text-nowrap">{{ $users->find($article->user_id)->name }}</td>
+                                    <td class="text-nowrap">
+                                        {{ $article->getUser->name }}
+                                    </td>
                                     <td class="text-nowrap">
                                         <a href="{{ route("article.show",$article->id) }}" class="btn btn-primary">
                                             Detail

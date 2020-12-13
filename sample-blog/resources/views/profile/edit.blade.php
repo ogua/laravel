@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+@section("head")
+    <style>
+        .article-thumbnail{
+            margin-top: 10px;
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            border-radius: 0.25rem;
+            background-size: 200%;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row ">
@@ -38,20 +51,11 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            <div class="col-12">
 
-                @isset($arr)
-                    <ul>
-                        @foreach($arr as $a)
-                            @if($a != "." && $a != "..")
-                                <li>
-                                    <img src="{{ asset("storage/".$a) }}" style="width: 150px" alt="">
-                                </li>
-                                @endif
-                        @endforeach
-                    </ul>
-
-                @endisset
+                @foreach(Auth::user()->getPhoto as $img)
+                    <div class="article-thumbnail shadow-sm" style="background-image:url('{{ asset("storage/article/".$img->location) }}') "></div>
+                @endforeach
 
             </div>
         </div>

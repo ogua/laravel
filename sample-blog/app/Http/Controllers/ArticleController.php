@@ -45,24 +45,27 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
 
-        if(!$request->hasFile('photo')){
-            return redirect()->back()->withErrors(['photo.*' => "Photo is require"]);
-        }
+//        if(!$request->hasFile('photo')){
+//            return redirect()->back()->withErrors(['photo.*' => "Photo is require"]);
+//        }
 
         $request->validate([
-//            "title"=> "required|min:10|max:225",
-//            "description"=> "required|min:30",
+            "title"=> "required|min:10|max:225",
+            "description"=> "required|min:30",
             "photo.*" => "mimetypes:image/jpeg,image/png"
         ]);
 
-        $fileNameArr = [];
+        if($request->hasFile("photo")){
+            $fileNameArr = [];
 
-        foreach ($request->file("photo") as $file){
-            $newFileName = uniqid()."_profile.".$file->getClientOriginalExtension();
-            array_push($fileNameArr,$newFileName);
-            $dir = "/public/article/";
-            $file->storeAs($dir,$newFileName);
+            foreach ($request->file("photo") as $file){
+                $newFileName = uniqid()."_profile.".$file->getClientOriginalExtension();
+                array_push($fileNameArr,$newFileName);
+                $dir = "/public/article/";
+                $file->storeAs($dir,$newFileName);
+            }
         }
+
 
         $article = new Article();
         $article->title = $request->title;
@@ -70,13 +73,14 @@ class ArticleController extends Controller
         $article->user_id = Auth::id();
         $article->save();
 
-        foreach ($fileNameArr as $f){
-            $photo = new Photo();
-            $photo->article_id  = $article->id;
-            $photo->location = $f;
-            $photo->save();
+        if($request->hasFile("photo")){
+            foreach ($fileNameArr as $f){
+                $photo = new Photo();
+                $photo->article_id  = $article->id;
+                $photo->location = $f;
+                $photo->save();
+            }
         }
-
 
         return redirect()->route("article.create")->with("status","<b>$request->title</b> is added.");
     }

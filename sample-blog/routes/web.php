@@ -25,6 +25,7 @@ Route::prefix("user-dashboard")->middleware("auth")->group(function (){
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource("article","ArticleController");
+    Route::resource("photo","PhotoController");
 
     Route::get("/profile","ProfileController@edit")->name("profile.edit");
     Route::post("/profile","ProfileController@update")->name("profile.update");

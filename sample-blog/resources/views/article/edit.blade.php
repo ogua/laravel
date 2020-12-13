@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@section("head")
+    <style>
+        .article-thumbnail{
+            margin-top: 10px;
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            border-radius: 0.25rem;
+            background-size: 200%;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="container">
         <div class="row ">
@@ -22,7 +34,7 @@
                             </p>
                         @endif
 
-                        <form action="{{ route("article.update",$article->id) }}" method="post">
+                        <form action="{{ route("article.update",$article->id) }}" id="article-form" method="post">
 
                             @csrf
                             @method("put")
@@ -35,7 +47,6 @@
                                 <small class="font-weight-bold text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-
                             <div class="form-group">
                                 <label for="description">Description</label>
                                 <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10">{{ $article->description }}</textarea>
@@ -43,9 +54,38 @@
                                 <small class="font-weight-bold text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
+                            <button class="btn btn-primary" form="article-form">Update Article</button>
 
-                            <button class="btn btn-primary">Update Article</button>
+
                         </form>
+                            <hr>
+
+
+                            @foreach($article->getPhotos as $img)
+                                <div class="d-inline-block">
+                                    <div class="article-thumbnail shadow-sm" style="background-image:url('{{ asset("storage/article/".$img->location) }}') "></div>
+                                    <form action="{{ route('photo.destroy',$img->id) }}" method="post">
+                                        @csrf
+                                        @method("delete")
+                                        <button class="btn btn-danger btn-sm" style="margin-top: -80px;margin-left: 5px">Delete</button>
+                                    </form>
+                                </div>
+                            @endforeach
+                            <form action="{{ route("photo.store") }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="article_id" value="{{ $article->id }}">
+                                <div class="form-row">
+                                    <div class="col-6">
+                                        <input type="file" name="photo[]" id="photo" class="form-control p-1" multiple required>
+                                        @error("photo.*")
+                                        <small class="font-weight-bold text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary">Upload New Photo</button>
+                                    </div>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div>
