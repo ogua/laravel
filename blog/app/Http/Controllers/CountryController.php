@@ -14,7 +14,8 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        $country = new Country();
+        return $country->find(1)->getArticles;
     }
 
     /**

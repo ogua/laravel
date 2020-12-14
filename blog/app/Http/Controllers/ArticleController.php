@@ -14,7 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $article = new Article();
+        return $article->find(1)->getVisitors[0]->getUser->name;
     }
 
     /**
