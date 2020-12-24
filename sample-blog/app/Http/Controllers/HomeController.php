@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function usePhone(){
+        return "U can use Phone";
+    }
+
+    public function examRoom(){
+        return "here is exam room";
+    }
 }

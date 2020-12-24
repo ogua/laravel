@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-12 col-md-4">
-                <div class="card">
+                <div class="card mb-3">
                     <div class="card-header">Edit Profile</div>
 
                     <div class="card-body">
@@ -50,12 +50,55 @@
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">Change Password</div>
 
-                @foreach(Auth::user()->getPhoto as $img)
-                    <div class="article-thumbnail shadow-sm" style="background-image:url('{{ asset("storage/article/".$img->location) }}') "></div>
-                @endforeach
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('profile.changePassword') }}">
+                            @csrf
+
+                            @foreach ($errors->all() as $error)
+                                <p class="text-danger">{{ $error }}</p>
+                            @endforeach
+
+                            <div class="form-group">
+                                <label for="password" class="">Current Password</label>
+                                <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="password" class="">New Password</label>
+                                <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="password" class="">New Confirm Password</label>
+
+                                <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                Update Password
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+
+                <div class="card">
+                    <div class="card-header">Uploaded Photo</div>
+
+                    <div class="card-body">
+                        @foreach(Auth::user()->getPhoto as $img)
+                            <div class="article-thumbnail shadow-sm" style="background-image:url('{{ asset("storage/article/".$img->location) }}') "></div>
+                        @endforeach
+                    </div>
+                </div>
 
             </div>
         </div>

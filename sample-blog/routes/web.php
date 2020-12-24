@@ -24,11 +24,14 @@ Route::prefix("user-dashboard")->middleware("auth")->group(function (){
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::get("/use-phone","HomeController@usePhone")->middleware('isAdmin')->name("use.phone");
+
     Route::resource("article","ArticleController");
     Route::resource("photo","PhotoController");
 
     Route::get("/profile","ProfileController@edit")->name("profile.edit");
     Route::post("/profile","ProfileController@update")->name("profile.update");
+    Route::post("/profile/change-password","ProfileController@changePassword")->name("profile.changePassword");
 
 
 });

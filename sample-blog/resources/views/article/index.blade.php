@@ -78,7 +78,11 @@
                                         @endforeach
                                     </td>
                                     <td class="text-nowrap">
-                                        {{ $article->getUser->name }}
+                                       @isset($article->getUser)
+                                           {{ $article->getUser->name }}
+                                           @else
+                                           Unknow
+                                        @endisset
                                     </td>
                                     <td class="text-nowrap">
                                         <a href="{{ route("article.show",$article->id) }}" class="btn btn-primary">
@@ -87,10 +91,11 @@
                                         <a href="{{ route("article.edit",$article->id) }}" class="btn btn-secondary">
                                             Edit
                                         </a>
-                                        <button type="submit" form="del" class="btn btn-danger">Delete</button>
-                                        <form action="{{ route("article.destroy",$article->id) }}" id="del" method="post">
+                                        <form action="{{ route("article.destroy",$article->id) }}" class="d-inline-block" method="post">
                                             @csrf
                                             @method("delete")
+                                            <button type="submit"  class="btn btn-danger">Delete</button>
+
                                         </form>
                                     </td>
                                     <td class="text-nowrap">
