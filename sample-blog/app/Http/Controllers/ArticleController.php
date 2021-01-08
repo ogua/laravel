@@ -7,6 +7,7 @@ use App\Photo;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,11 +26,20 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role == 0){
-            $articles = Article::orderBy("id","desc")->paginate(5);
-        }else{
-            $articles = Article::where('user_id',Auth::id())->orderBy("id","desc")->paginate(5);
+        DB::connection()->enableQueryLog();
+        $articles = Article::all();
+        foreach ($articles as $a){
+            $a->getUser->name;
         }
+        $q = DB::getQueryLog();
+
+        return [$q,$articles];
+
+//        if(Auth::user()->role == 0){
+//            $articles = Article::orderBy("id","desc")->paginate(5);
+//        }else{
+//            $articles = Article::where('user_id',Auth::id())->orderBy("id","desc")->paginate(5);
+//        }
         return view("article.index",compact('articles'));
     }
 
