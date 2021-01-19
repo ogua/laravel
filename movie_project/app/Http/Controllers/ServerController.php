@@ -14,7 +14,8 @@ class ServerController extends Controller
      */
     public function index()
     {
-        //
+        $servers = Server::latest()->get();
+        return view("server.index",compact('servers'));
     }
 
     /**
@@ -35,7 +36,25 @@ class ServerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "name" => "required",
+            "url" => "required",
+            "icon" => "required|mimes:jpeg,png"
+        ]);
+
+        $dir="public/server_icon";
+        $file = $request->file("icon");
+        $newName = uniqid()."_"."icon.".$file->getClientOriginalExtension();
+        $request->file("icon")->storeAs($dir,$newName);
+
+        $server = new Server();
+        $server->name = $request->name;
+        $server->url = $request->url;
+        $server->icon = $newName;
+        $server->save();
+
+        return redirect()->route("server.index")->with("toast","New Server Added");
+
     }
 
     /**
@@ -57,7 +76,8 @@ class ServerController extends Controller
      */
     public function edit(Server $server)
     {
-        //
+        $servers = Server::latest()->get();
+        return view("server.edit",compact('servers','server'));
     }
 
     /**
@@ -69,7 +89,29 @@ class ServerController extends Controller
      */
     public function update(Request $request, Server $server)
     {
-        //
+        $request->validate([
+            "name" => "required",
+            "url" => "required",
+            "icon" => "sometimes|mimes:jpeg,png"
+        ]);
+
+        if($request->hasFile('icon')){
+            $dir="public/server_icon";
+            $file = $request->file("icon");
+            $newName = uniqid()."_"."icon.".$file->getClientOriginalExtension();
+            $request->file("icon")->storeAs($dir,$newName);
+        }
+
+
+        $server->name = $request->name;
+        $server->url = $request->url;
+        if($request->hasFile('icon')){
+            $server->icon = $newName;
+        }
+        $server->update();
+
+        return redirect()->route("server.index")->with("toast","Server info Updated");
+
     }
 
     /**

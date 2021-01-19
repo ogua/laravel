@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        return view("category.index");
     }
 
     /**
@@ -35,7 +37,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => "required",
+        ]);
+        $category = new Category();
+        $category->title = $request->title;
+        $category->user_id = Auth::id();
+        $category->save();
+
+        return redirect()->route("category.index")->with("toast","New Category added");
+
     }
 
     /**
@@ -57,7 +68,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('category.edit',compact('category'));
     }
 
     /**
@@ -69,7 +80,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'title' => "required",
+        ]);
+        $category->title = $request->title;
+        $category->update();
+        return redirect()->route("category.index")->with("toast","Category Update successful");
+
     }
 
     /**

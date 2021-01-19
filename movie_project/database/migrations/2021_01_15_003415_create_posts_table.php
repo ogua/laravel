@@ -25,9 +25,9 @@ class CreatePostsTable extends Migration
             $table->text("excerpt");
             $table->year("release_year");
             $table->text("trailer");
-            $table->bigIncrements("quality_id");
-            $table->bigIncrements("category_id");
-            $table->bigIncrements("user_id");
+            $table->bigInteger("quality_id");
+            $table->bigInteger("category_id");
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }

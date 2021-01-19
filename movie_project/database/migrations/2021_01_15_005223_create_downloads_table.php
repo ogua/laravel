@@ -15,10 +15,10 @@ class CreateDownloadsTable extends Migration
     {
         Schema::create('downloads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements("related_id");
+            $table->bigInteger("related_id");
             $table->text("link");
             $table->text("file_size");
-            $table->bigIncrements("server_id");
+            $table->bigInteger("server_id");
             $table->timestamps();
         });
     }

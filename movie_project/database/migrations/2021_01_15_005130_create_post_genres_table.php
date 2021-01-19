@@ -15,8 +15,8 @@ class CreatePostGenresTable extends Migration
     {
         Schema::create('post_genres', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements("post_id");
-            $table->bigIncrements("genre_id");
+            $table->bigInteger("post_id");
+            $table->bigInteger("genre_id");
             $table->timestamps();
         });
     }

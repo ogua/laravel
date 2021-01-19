@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
             $table->string("phone");
             $table->text("address");
             $table->string("company_name");
-            $table->bigIncrements("user_id");
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }

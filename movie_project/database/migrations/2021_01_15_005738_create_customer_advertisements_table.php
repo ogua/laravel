@@ -15,14 +15,14 @@ class CreateCustomerAdvertisementsTable extends Migration
     {
         Schema::create('customer_advertisements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements("customer_id");
-            $table->bigIncrements("advertisement_id");
+            $table->bigInteger("customer_id");
+            $table->bigInteger("advertisement_id");
             $table->date("start");
             $table->date("end");
             $table->integer("days");
             $table->integer("income");
             $table->string("ads_photo");
-            $table->bigIncrements("user_id");
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }

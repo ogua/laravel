@@ -17,7 +17,7 @@ class CreateVisitorsTable extends Migration
             $table->bigIncrements('id');
             $table->text("user_agent");
             $table->text("ip");
-            $table->bigIncrements("post_id");
+            $table->bigInteger("post_id");
             $table->timestamps();
         });
     }

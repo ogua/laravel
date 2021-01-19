@@ -15,7 +15,7 @@ class CreateEpisodesTable extends Migration
     {
         Schema::create('episodes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements("post_id");
+            $table->bigInteger("post_id");
             $table->integer("number");
             $table->integer("title");
             $table->timestamps();

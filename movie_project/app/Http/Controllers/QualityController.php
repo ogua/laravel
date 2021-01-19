@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Quality;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QualityController extends Controller
 {
@@ -14,7 +15,8 @@ class QualityController extends Controller
      */
     public function index()
     {
-        //
+        return view("quality.index");
+
     }
 
     /**
@@ -35,7 +37,15 @@ class QualityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => "required",
+        ]);
+        $quality = new Quality();
+        $quality->title = $request->title;
+        $quality->user_id = Auth::id();
+        $quality->save();
+
+        return redirect()->route("quality.index")->with("toast","New Quality added");
     }
 
     /**
@@ -57,7 +67,8 @@ class QualityController extends Controller
      */
     public function edit(Quality $quality)
     {
-        //
+        return view('quality.edit',compact('quality'));
+
     }
 
     /**
@@ -69,7 +80,12 @@ class QualityController extends Controller
      */
     public function update(Request $request, Quality $quality)
     {
-        //
+        $request->validate([
+            'title' => "required",
+        ]);
+        $quality->title = $request->title;
+        $quality->update();
+        return redirect()->route("quality.index")->with("toast","Quality Update successful");
     }
 
     /**

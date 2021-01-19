@@ -287,6 +287,12 @@ a i.fa{
 div.dataTables_wrapper div.dataTables_info{
     white-space: pre-wrap;
 }
+
+
+.server_icon{
+    height: 20px;
+}
+
 @media screen and (max-width: 960px) {
     .aside-menu{
         position: fixed;

@@ -19,7 +19,7 @@ class CreateAdvertisementsTable extends Migration
             $table->string("default_photo");
             $table->integer("price");
             $table->text("information");
-            $table->bigIncrements("user_id");
+            $table->bigInteger("user_id");
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GenreController extends Controller
 {
@@ -14,7 +15,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        //
+        return view("genre.index");
     }
 
     /**
@@ -35,7 +36,16 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => "required",
+        ]);
+        $genre = new Genre();
+        $genre->title = $request->title;
+        $genre->user_id = Auth::id();
+        $genre->save();
+
+        return redirect()->route("genre.index")->with("toast","New Genre added");
     }
 
     /**
@@ -57,7 +67,8 @@ class GenreController extends Controller
      */
     public function edit(Genre $genre)
     {
-        //
+        return view('genre.edit',compact('genre'));
+
     }
 
     /**
@@ -69,7 +80,12 @@ class GenreController extends Controller
      */
     public function update(Request $request, Genre $genre)
     {
-        //
+        $request->validate([
+            'title' => "required",
+        ]);
+        $genre->title = $request->title;
+        $genre->update();
+        return redirect()->route("genre.index")->with("toast","Genre Update successful");
     }
 
     /**

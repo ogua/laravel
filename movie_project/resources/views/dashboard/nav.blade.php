@@ -44,6 +44,39 @@
                 @slot("count") 50 @endslot
             @endcomponent
 
+
+
+
+            @component('component.nav-spacer') @endcomponent
+
+            @component("component.nav-title") Configuration @endcomponent
+
+            @component("component.nav-item")
+                @slot("icon") <i class="feather-layers"></i> @endslot
+                @slot("name") Category Manager @endslot
+                @slot("link") {{ route('category.index') }} @endslot
+            @endcomponent
+
+            @component("component.nav-item")
+                @slot("icon") <i class="feather-grid"></i> @endslot
+                @slot("name") Genre Manager @endslot
+                @slot("link") {{ route('genre.index') }} @endslot
+            @endcomponent
+
+            @component("component.nav-item")
+                @slot("icon") <i class="feather-target"></i> @endslot
+                @slot("name") Quality Manager @endslot
+                @slot("link") {{ route('quality.index') }} @endslot
+            @endcomponent
+
+            @component("component.nav-item")
+                @slot("icon") <i class="feather-server"></i> @endslot
+                @slot("name") Server Manager @endslot
+                @slot("link") {{ route('server.index') }} @endslot
+            @endcomponent
+
+
+
             @component('component.nav-spacer') @endcomponent
             @component("component.nav-title") Profile Management @endcomponent
             @component("component.nav-item")
@@ -51,32 +84,6 @@
                 @slot("name") Edit Profile @endslot
                 @slot("link") {{ route('profile.edit') }} @endslot
             @endcomponent
-
-
-            @component('component.nav-spacer') @endcomponent
-
-            @component("component.nav-title") Test Menu Par @endcomponent
-
-            @component("component.nav-item")
-                @slot("icon") <i class="feather-book"></i> @endslot
-                @slot("name") Add Test @endslot
-                @slot("link") {{ route('test') }} @endslot
-            @endcomponent
-
-            @component("component.nav-item")
-                @slot("icon") <i class="feather-book"></i> @endslot
-                @slot("name") Add Test 2 @endslot
-                @slot("link") https://mms-it.com @endslot
-            @endcomponent
-
-            @component("component.nav-item-count")
-                @slot("icon") <i class="feather-pie-chart"></i> @endslot
-                @slot("name") Test List @endslot
-                @slot("link") # @endslot
-                @slot("count") 50 @endslot
-            @endcomponent
-
-            @component('component.nav-spacer') @endcomponent
 
 
 

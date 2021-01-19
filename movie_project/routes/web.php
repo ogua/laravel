@@ -19,6 +19,11 @@ Auth::routes();
 
 Route::view("/test","test")->name("test");
 
+Route::resource("category","CategoryController");
+Route::resource("genre","GenreController");
+Route::resource("quality","QualityController");
+Route::resource("server","ServerController");
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sample', 'HomeController@sample')->name('sample');
 Route::get('/edit','ProfileController@edit')->name('profile.edit');
