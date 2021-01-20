@@ -23,6 +23,7 @@ Route::resource("category","CategoryController");
 Route::resource("genre","GenreController");
 Route::resource("quality","QualityController");
 Route::resource("server","ServerController");
+Route::resource("post","PostController");
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sample', 'HomeController@sample')->name('sample');

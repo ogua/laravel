@@ -6,7 +6,7 @@
             </p>
             <div class="">
                 {{ $button }}
-                <button class="btn btn-outline-secondary btn-sm btn-maximize" title="Maximize">
+                <button type="button" class="btn btn-outline-secondary btn-sm btn-maximize" title="Maximize">
                     <i class="fas fa-expand-alt fa-fw"></i>
                 </button>
             </div>

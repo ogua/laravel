@@ -44,6 +44,24 @@
                 @slot("count") 50 @endslot
             @endcomponent
 
+            @component('component.nav-spacer') @endcomponent
+
+
+            @component("component.nav-title") Post Management @endcomponent
+
+            @component("component.nav-item")
+                @slot("icon") <i class="feather-plus-circle"></i> @endslot
+                @slot("name") Create New Post @endslot
+                @slot("link") {{ route('post.create') }} @endslot
+            @endcomponent
+
+            @component("component.nav-item-count")
+                @slot("icon") <i class="feather-list"></i> @endslot
+                @slot("name") Post List @endslot
+                @slot("link") {{ route('post.index') }} @endslot
+                @slot("count") 0  @endslot
+            @endcomponent
+
 
 
 

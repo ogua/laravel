@@ -63,3 +63,6 @@ function logout(){
 }
 
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
