@@ -27,13 +27,13 @@
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}" placeholder="Movie or Series Name">
                         @error("name")
-                        <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <input type="text" id="original_name" name="original_name" class="form-control" value="{{ old('original_name') }}" placeholder="Original Name">
                         @error("original_name")
-                        <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -45,7 +45,7 @@
                             @endfor
                         </datalist>
                         @error("release_year")
-                        <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -54,13 +54,13 @@
                             <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
                                 @foreach($categories as $c)
                                     <label class="btn btn-outline-secondary">
-                                        <input type="radio" name="category" id="option1" value="{{ $c->id }}" required> {{ $c->title }}
+                                        <input type="radio" name="category" id="option1" value="{{ $c->id }}" {{ old('category') == $c->id ? "checked" : "" }}> {{ $c->title }}
                                     </label>
                                 @endforeach
                             </div>
                         </div>
                         @error("category")
-                        <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -68,12 +68,12 @@
                         <label>Select Quality</label>
                         <select name="quality" class="custom-select">
                             @foreach($qualities as $q)
-                                <option value="{{ $q->id }}">{{ $q->title }}</option>
+                                <option value="{{ $q->id }}" {{ old("quality") == $q->id ? "selected":"" }}>{{ $q->title }}</option>
                             @endforeach
                         </select>
 
                         @error("quality")
-                        <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
                         @enderror
                     </div>
                 @endslot
@@ -89,14 +89,17 @@
                     @foreach($genres as $g)
 
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="genre[]" id="genre{{ $g->id }}" value="{{ $g->id }}" >
+                            <input type="checkbox" class="custom-control-input" name="genre[]" id="genre{{ $g->id }}" value="{{ $g->id }}" {{ old('genre') && in_array($g->id,old('genre')) ? 'checked' : '' }}>
                             <label class="custom-control-label" for="genre{{ $g->id }}">{{ $g->title }}</label>
                         </div>
 
                     @endforeach
 
                     @error("genre")
-                    <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                    <small class="text-danger font-weight-bold">{{ $message }}</small>
+                    @enderror
+                    @error("genre.*")
+                    <small class="text-danger font-weight-bold">{{ $message }}</small>
                     @enderror
 
                 @endslot
@@ -119,7 +122,7 @@
                                 <label for="director">Director</label>
                                 <input type="text" id="director" name="director" value="{{ old('director') }}" class="form-control">
                                 @error("director")
-                                <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                                <small class="text-danger font-weight-bold">{{ $message }}</small>
                                 @enderror
                             </div>
                         </div>
@@ -128,11 +131,18 @@
                                 <label for="actors">Actors</label>
                                 <input type="text" id="actors" name="actors" value="{{ old('actors') }}" class="form-control">
                                 @error("actors")
-                                <small class="text-danger font-weight-bold">{{ $error->message }}</small>
+                                <small class="text-danger font-weight-bold">{{ $message }}</small>
                                 @enderror
                             </div>
                         </div>
                     </div>
+                        <div class="form-group">
+                            <label for="actors">Trailer</label>
+                            <input type="text" id="trailer" name="trailer" value="{{ old('trailer') }}" class="form-control">
+                            @error("trailer")
+                            <small class="text-danger font-weight-bold">{{ $message }}</small>
+                            @enderror
+                        </div>
                 @endslot
             @endcomponent
 
@@ -144,7 +154,10 @@
 
                     @endslot
                     @slot('body')
-                            <textarea name="description" id="" cols="30" rows="10"></textarea>
+                            <textarea name="description" id="" cols="30" rows="10">{{ old('description') }}</textarea>
+                            @error("description")
+                            <small class="text-danger font-weight-bold">{{ $message }}</small>
+                            @enderror
                     @endslot
                 @endcomponent
 
@@ -160,6 +173,15 @@
 
                 @endslot
                 @slot('body')
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <input type="file" name="photo" class="d-none real-uploder">
                     <div class="border rounded upload-iu">
@@ -168,6 +190,9 @@
                         </div>
                     </div>
 
+                        @error("photo")
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
+                        @enderror
                         <hr>
 
                     <div class="form-group">
@@ -217,6 +242,7 @@
         });
         $(".real-uploder").on("change",function () {
             let file = this.files[0];
+            // console.log(file);
             let fileReader = new FileReader();
             fileReader.onload = function () {
                 $(".upload-iu").empty();

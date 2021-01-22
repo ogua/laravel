@@ -24,6 +24,9 @@ Route::resource("genre","GenreController");
 Route::resource("quality","QualityController");
 Route::resource("server","ServerController");
 Route::resource("post","PostController");
+Route::resource("photo","PhotoController");
+Route::get("upload-post-photo/{id}","PhotoController@create")->name("upload-post-photo");
+//Route::post("upload-post-photo/{id}","PhotoController@create")->name("upload-post-photo");
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/sample', 'HomeController@sample')->name('sample');

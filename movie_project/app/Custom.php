@@ -19,4 +19,18 @@ class Custom
         "main_css" => "dashboard/css/bootstrap.min.css",
     ];
 
+    public static function makeSlug($x){
+        $slug=preg_replace('/[^A-Za-z0-9-]+/', '-', $x);
+        return $slug;
+    }
+
+    public static function makeExcerpt($x,$end=100){
+
+        $txt = strip_tags($x);
+        if(strlen($txt)>$end){
+            $txt = substr($txt,0,$end)." ...";
+        }
+
+        return $txt;
+    }
 }
