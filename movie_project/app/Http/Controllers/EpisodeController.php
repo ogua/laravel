@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Episode;
+use App\Post;
 use Illuminate\Http\Request;
 
 class EpisodeController extends Controller
@@ -22,9 +23,10 @@ class EpisodeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $post = Post::find($id);
+        return view("post.create-episode",compact('post'));
     }
 
     /**
@@ -35,7 +37,18 @@ class EpisodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "post_id" => "required",
+            "number" => "required|integer",
+            "title" => "required",
+        ]);
+
+        $episode = new Episode();
+        $episode->post_id = $request->post_id;
+        $episode->number = $request->number;
+        $episode->title = $request->title;
+        $episode->save();
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +93,7 @@ class EpisodeController extends Controller
      */
     public function destroy(Episode $episode)
     {
-        //
+        $episode->delete();
+        return redirect()->back();
     }
 }

@@ -25,7 +25,11 @@ Route::resource("quality","QualityController");
 Route::resource("server","ServerController");
 Route::resource("post","PostController");
 Route::resource("photo","PhotoController");
+Route::resource("download","DownloadController");
+Route::resource("episode","EpisodeController");
 Route::get("upload-post-photo/{id}","PhotoController@create")->name("upload-post-photo");
+Route::get("upload-movie-download-link/{id}","DownloadController@create")->name("upload-movie-download-link");
+Route::get("create-episode/{id}","EpisodeController@create")->name("create-episode");
 //Route::post("upload-post-photo/{id}","PhotoController@create")->name("upload-post-photo");
 
 Route::get('/home', 'HomeController@index')->name('home');

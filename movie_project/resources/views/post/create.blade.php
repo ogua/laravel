@@ -1,6 +1,6 @@
 @extends('dashboard.app')
 
-@section("title") Test Page @endsection
+@section("title") Create Post @endsection
 
 @section('content')
 

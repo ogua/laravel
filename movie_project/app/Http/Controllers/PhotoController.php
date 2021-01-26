@@ -54,8 +54,17 @@ class PhotoController extends Controller
             $photo->save();
         }
 
+        $post = Post::find($request->post_id);
 
-        return $request;
+//        return $post->category_id;
+
+        if($post->category_id == 1){
+            return redirect()->route("upload-movie-download-link",$post->id)->with("toast","post photo added");
+
+        }else{
+            return redirect()->route("create-episode",$post->id)->with("toast","post photo added");
+
+        }
     }
 
     /**

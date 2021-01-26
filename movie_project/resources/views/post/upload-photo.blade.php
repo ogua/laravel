@@ -1,6 +1,6 @@
 @extends('dashboard.app')
 
-@section("title") Test Page @endsection
+@section("title") Upload Photo @endsection
 
 @section("head")
     <link rel="stylesheet" href="{{ asset('dashboard/vendor/jquery-image-uploader-preview-and-delete/dist/image-uploader.min.css') }}">
@@ -24,9 +24,7 @@
             @component("component.card")
                 @slot('title') Upload Photo for <b>{{ $post->name }}</b> @endslot
                 @slot('button')
-                    <a href="" class="btn btn-sm btn-outline-danger ">
-                        <i class="fas fa-trash fa-fw"></i>
-                    </a>
+
                 @endslot
                 @slot('body')
 
@@ -45,7 +43,7 @@
                             @enderror
                         </div>
 
-                        <button class="btn btn-primary btn-lg float-right">Upload Now</button>
+                        <button class="btn btn-primary btn-lg float-right">Upload And Next</button>
 
                     </form>
 

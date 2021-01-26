@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Download;
+use App\Post;
 use Illuminate\Http\Request;
 
 class DownloadController extends Controller
@@ -22,9 +23,10 @@ class DownloadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $post = Post::find($id);
+        return view("post.upload-download-link",compact('post'));
     }
 
     /**
@@ -35,7 +37,28 @@ class DownloadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        return $request;
+        $request->validate([
+            "post_id" => "required",
+            "link" => "required",
+            "file_size" => "required",
+            "server_id" => "required|exists:servers,id"
+        ]);
+
+        $download = new Download();
+        if($request->episode_id){
+            //for series
+            $download->episode_id = $request->episode_id;
+        }
+            //for movie
+            $download->post_id = $request->post_id;
+
+        $download->file_size = $request->file_size;
+        $download->link = $request->link;
+        $download->server_id = $request->server_id;
+        $download->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +103,7 @@ class DownloadController extends Controller
      */
     public function destroy(Download $download)
     {
-        //
+        $download->delete();
+        return redirect()->back();
     }
 }

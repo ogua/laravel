@@ -17,7 +17,7 @@ class CreateEpisodesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger("post_id");
             $table->integer("number");
-            $table->integer("title");
+            $table->string("title");
             $table->timestamps();
         });
     }

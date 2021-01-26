@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Custom;
+use App\Download;
+use App\Episode;
 use App\Genre;
+use App\Photo;
 use App\Post;
 use App\PostGenre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -20,7 +24,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view("post.index");
+        $posts = Post::latest()->paginate(5);
+        return view("post.index",compact('posts'));
     }
 
     /**
@@ -73,8 +78,8 @@ class PostController extends Controller
         $post->trailer = $request->trailer;
         $post->description = $request->description;
         $post->photo = $newName;
-        $post->slug = Custom::makeSlug($request->title);
-        $post->excerpt = Custom::makeExcerpt($request->discripiton);
+        $post->slug = Custom::makeSlug($request->name);
+        $post->excerpt = Custom::makeExcerpt($request->description);
         $post->user_id = Auth::id();
         $post->save();
 
@@ -136,6 +141,15 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+
+        foreach ($post->moviePhoto as $pm){
+            Storage::delete("public/photo/".$pm->location);
+        }
+        Photo::where("post_id",$post->id)->delete();
+        PostGenre::where("post_id",$post->id)->delete();
+        Episode::where("post_id",$post->id)->delete();
+        Download::where("post_id",$post->id)->delete();
+        $post->delete();
+        return redirect()->back();
     }
 }
