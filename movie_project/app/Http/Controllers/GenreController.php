@@ -38,7 +38,7 @@ class GenreController extends Controller
     {
 
         $request->validate([
-            'title' => "required",
+            'title' => "required|unique:genres,title",
         ]);
         $genre = new Genre();
         $genre->title = $request->title;
@@ -81,7 +81,7 @@ class GenreController extends Controller
     public function update(Request $request, Genre $genre)
     {
         $request->validate([
-            'title' => "required",
+            'title' => "required|unique:genres,title,".$genre->id,
         ]);
         $genre->title = $request->title;
         $genre->update();

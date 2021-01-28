@@ -29,6 +29,9 @@
                         </div>
 
                     </form>
+                        @error("title")
+                        <small class="text-danger font-weight-bold">{{ $message }}</small>
+                        @enderror
 
                         <hr>
 

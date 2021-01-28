@@ -37,8 +37,8 @@ class ServerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name" => "required",
-            "url" => "required",
+            "name" => "required|unique:servers,name",
+            "url" => "required|unique:servers,url",
             "icon" => "required|mimes:jpeg,png"
         ]);
 
@@ -90,8 +90,8 @@ class ServerController extends Controller
     public function update(Request $request, Server $server)
     {
         $request->validate([
-            "name" => "required",
-            "url" => "required",
+            "name" => "required|unique:servers,name,".$server->id,
+            "url" => "required|unique:servers,url,".$server->id,
             "icon" => "sometimes|mimes:jpeg,png"
         ]);
 

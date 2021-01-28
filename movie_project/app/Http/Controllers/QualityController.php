@@ -38,7 +38,7 @@ class QualityController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => "required",
+            'title' => "required|unique:qualities,title",
         ]);
         $quality = new Quality();
         $quality->title = $request->title;
@@ -81,7 +81,7 @@ class QualityController extends Controller
     public function update(Request $request, Quality $quality)
     {
         $request->validate([
-            'title' => "required",
+            'title' => "required|qualities,title,".$quality->id,
         ]);
         $quality->title = $request->title;
         $quality->update();

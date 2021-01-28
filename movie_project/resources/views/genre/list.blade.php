@@ -2,7 +2,7 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Category Title</th>
+        <th>Genre Title</th>
         <th>Control</th>
         <th>Created At</th>
     </tr>

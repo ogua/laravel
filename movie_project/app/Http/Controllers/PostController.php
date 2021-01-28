@@ -47,6 +47,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
+//        return $request;
         $request->validate([
             "name" => "required",
             "original_name" => "required",
@@ -79,7 +80,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->photo = $newName;
         $post->slug = Custom::makeSlug($request->name);
-        $post->excerpt = Custom::makeExcerpt($request->description);
+        $post->excerpt = Custom::makeExcerpt("");
         $post->user_id = Auth::id();
         $post->save();
 

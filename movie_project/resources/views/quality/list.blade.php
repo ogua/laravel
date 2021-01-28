@@ -2,7 +2,7 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Category Title</th>
+        <th>Quality Title</th>
         <th>Control</th>
         <th>Created At</th>
     </tr>
