@@ -4,6 +4,7 @@
         <th>#</th>
         <th>Category Title</th>
         <th>Control</th>
+        <th>Owner</th>
         <th>Created At</th>
     </tr>
     </thead>
@@ -18,6 +19,7 @@
                         <i class="feather-edit fa-fw"></i>
                     </a>
                 </td>
+                <td>{{ $category->user->name }}</td>
                 <td>{{ $category->created_at }}</td>
             </tr>
 

@@ -4,6 +4,7 @@
         <th>#</th>
         <th>Genre Title</th>
         <th>Control</th>
+        <th>Owner</th>
         <th>Created At</th>
     </tr>
     </thead>
@@ -18,6 +19,7 @@
                         <i class="feather-edit fa-fw"></i>
                     </a>
                 </td>
+                <td>{{ $genre->user->name }}</td>
                 <td>{{ $genre->created_at }}</td>
             </tr>
 

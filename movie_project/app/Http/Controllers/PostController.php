@@ -24,7 +24,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate(5);
+        $posts = Post::with('category','user','genre','quality')->latest()->paginate(7);
         return view("post.index",compact('posts'));
     }
 
@@ -80,8 +80,10 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->photo = $newName;
         $post->slug = Custom::makeSlug($request->name);
-        $post->excerpt = Custom::makeExcerpt("");
+//        return Custom::makeExcerpt($request->description);
+        $post->excerpt = Custom::makeExcerpt($request->description);
         $post->user_id = Auth::id();
+//        return $post;
         $post->save();
 
         foreach ($request->genre as $g){
@@ -119,7 +121,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return  view('post.edit',compact('post'));
     }
 
     /**

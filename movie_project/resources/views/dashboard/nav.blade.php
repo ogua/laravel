@@ -59,7 +59,7 @@
                 @slot("icon") <i class="feather-list"></i> @endslot
                 @slot("name") Post List @endslot
                 @slot("link") {{ route('post.index') }} @endslot
-                @slot("count") 0  @endslot
+                @slot("count") {{ \App\Post::count() }}  @endslot
             @endcomponent
 
 
