@@ -38,7 +38,7 @@ Route::prefix("user-dashboard")->middleware("auth")->group(function (){
 
 
 
-Route::post("article-search","ArticleController@search")->name("article.search");
+Route::get("article-search","ArticleController@search")->name("article.search");
 
 Auth::routes();
 

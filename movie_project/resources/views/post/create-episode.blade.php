@@ -1,6 +1,6 @@
 @extends('dashboard.app')
 
-@section("title") Test Page @endsection
+@section("title") Create Episode @endsection
 
 @section("head")
 @endsection
@@ -23,9 +23,7 @@
             @component("component.card")
                 @slot('title') Add Episode for <b>{{ $post->name }}</b> @endslot
                 @slot('button')
-                    <a href="" class="btn btn-sm btn-outline-danger ">
-                        <i class="fas fa-trash fa-fw"></i>
-                    </a>
+
                 @endslot
                 @slot('body')
 

@@ -133,7 +133,65 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            "name" => "required",
+            "original_name" => "required",
+            "release_year" => "required|integer|min:2011",
+            "category" => "required|exists:categories,id",
+            "quality" => "required|exists:qualities,id",
+            "genre" => "nullable",
+            "genre.*" => "exists:genres,id",
+            "director" => "nullable",
+            "actors" => "nullable",
+            "trailer" => "nullable|url",
+            "description" => "required",
+            "photo" => "sometimes|mimetypes:image/jpeg,image/png|max:512",
+        ]);
+
+        if($request->hasFile('photo')){
+
+            $dir="public/movie_photo";
+
+            Storage::delete($dir."/".$post->photo);
+
+            $file = $request->file("photo");
+            $newName = uniqid()."_"."movie_photo.".$file->getClientOriginalExtension();
+            $request->file("photo")->storeAs($dir,$newName);
+
+
+        }
+
+
+        $post->name = $request->name;
+        $post->original_name = $request->original_name;
+        $post->release_year = $request->release_year;
+        $post->category_id = $request->category;
+        $post->quality_id = $request->quality;
+        $post->director = $request->director;
+        $post->actors = $request->actors;
+        $post->trailer = $request->trailer;
+        $post->description = $request->description;
+        if($request->hasFile('photo')){
+            $post->photo = $newName;
+        }
+        $post->slug = Custom::makeSlug($request->name);
+//        return Custom::makeExcerpt($request->description);
+        $post->excerpt = Custom::makeExcerpt($request->description);
+
+//        return $post;
+        $post->update();
+
+        if($request->genre){
+            foreach ($request->genre as $g){
+                $pg = new PostGenre();
+                $pg->post_id = $post->id;
+                $pg->genre_id = $g;
+                $pg->save();
+            }
+        }
+
+        return redirect()->back()->with("toast","Post Update Successful");
+
     }
 
     /**
@@ -154,5 +212,12 @@ class PostController extends Controller
         Download::where("post_id",$post->id)->delete();
         $post->delete();
         return redirect()->back();
+    }
+
+    public function deletePostGenre($post_id,$genre_id){
+
+        $pg = PostGenre::where("post_id",$post_id)->where("genre_id",$genre_id)->delete();
+        return redirect()->back()->with("toast","Post Genre is deleted");
+
     }
 }

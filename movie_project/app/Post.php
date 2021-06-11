@@ -14,6 +14,10 @@ class Post extends Model
         return $this->hasMany(Photo::class,"post_id");
     }
 
+    public function download(){
+        return $this->hasMany(Download::class,"post_id");
+    }
+
     public function category(){
         return $this->belongsTo(Category::class,"category_id");
     }

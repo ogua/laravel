@@ -26,20 +26,20 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        DB::connection()->enableQueryLog();
-        $articles = Article::all();
-        foreach ($articles as $a){
-            $a->getUser->name;
-        }
-        $q = DB::getQueryLog();
-
-        return [$q,$articles];
-
-//        if(Auth::user()->role == 0){
-//            $articles = Article::orderBy("id","desc")->paginate(5);
-//        }else{
-//            $articles = Article::where('user_id',Auth::id())->orderBy("id","desc")->paginate(5);
+//        DB::connection()->enableQueryLog();
+//        $articles = Article::all();
+//        foreach ($articles as $a){
+//            $a->getUser->name;
 //        }
+//        $q = DB::getQueryLog();
+//
+//        return [$q,$articles];
+
+        if(Auth::user()->role == 0){
+            $articles = Article::orderBy("id","desc")->paginate(5);
+        }else{
+            $articles = Article::where('user_id',Auth::id())->orderBy("id","desc")->paginate(5);
+        }
         return view("article.index",compact('articles'));
     }
 

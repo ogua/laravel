@@ -14,7 +14,7 @@
 @endsection
 @section('content')
 
-    {{ dd($articles->getQueryLog()) }}
+
     <div class="container">
         <div class="row ">
             <div class="col-12">
@@ -30,11 +30,10 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="">
-                                {{ $articles->links() }}
+                                {{ $articles->appends(Request::all())->links() }}
                             </div>
                             <div class="">
-                                <form action="{{ route('article.search') }}" method="post">
-                                    @csrf
+                                <form action="{{ route('article.search') }}" method="get">
                                     <div class="form-inline mb-3">
                                         <input type="text" class="form-control mr-2" name="search">
                                         <button class="btn btn-primary">Search</button>

@@ -20,10 +20,11 @@ Auth::routes();
 Route::view("/test","test")->name("test");
 
 Route::resource("category","CategoryController");
-Route::resource("genre","GenreController");
 Route::resource("quality","QualityController");
 Route::resource("server","ServerController");
 Route::resource("post","PostController");
+Route::get("delete-post-genre/{post_id}/{genre_id}","PostController@deletePostGenre")->name("delete.post.genre");
+Route::resource("genre","GenreController");
 Route::resource("photo","PhotoController");
 Route::resource("download","DownloadController");
 Route::resource("episode","EpisodeController");

@@ -80,6 +80,6 @@ class PostGenreController extends Controller
      */
     public function destroy(PostGenre $postGenre)
     {
-        //
+
     }
 }

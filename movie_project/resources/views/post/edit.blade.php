@@ -23,6 +23,7 @@
                 @endslot
                 @slot('body')
                     @csrf
+                    @method("put")
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" value="{{ $post->name }}" placeholder="Movie or Series Name">
@@ -109,13 +110,14 @@
                     @enderror
                     <hr>
 
+                    <p class="font-weight-bold">Selected Genre for Post</p>
                     <ul class="list-group">
                         @foreach($post->genre as $pg)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             {{ $pg->title }}
-                            <button class="btn btn-outline-danger btn-sm" >
+                            <a href="{{ route('delete.post.genre',[$post->id,$pg->id]) }}" class="btn btn-outline-danger btn-sm" >
                                 <i class="feather-trash-2"></i>
-                            </button>
+                            </a>
                         </li>
 
                         @endforeach
@@ -163,6 +165,39 @@
                             <small class="text-danger font-weight-bold">{{ $message }}</small>
                             @enderror
                         </div>
+
+                    <div class="">
+
+                        <a href="{{ route('upload-post-photo',$post->id) }}" class="btn btn-outline-primary">
+                            <i class="feather-edit"></i>
+                            Edit Post Photo <span class="badge badge-primary">{{ $post->moviePhoto->count() }}</span>
+                        </a>
+
+                        @if($post->category_id == 1)
+
+                            <a href="{{ route('upload-movie-download-link',$post->id) }}" class="btn btn-outline-primary">
+                                <i class="feather-edit"></i>
+                                Edit Download
+                                <span class="badge badge-primary">{{ $post->download->count() }}</span>
+                            </a>
+
+                        @else
+
+                            <a href="{{ route('create-episode',$post->id) }}" class="btn btn-outline-primary">
+                                <i class="feather-edit"></i>
+                                Edit Episode
+                                <span class="badge badge-primary">{{ $post->episode->count() }}</span>
+                            </a>
+
+                            <a href="{{ route('upload-movie-download-link',$post->id) }}" class="btn btn-outline-primary">
+                                <i class="feather-edit"></i>
+                                Edit Download
+                                <span class="badge badge-primary">{{ $post->download->count() }}</span>
+                            </a>
+
+                        @endif
+
+                    </div>
                 @endslot
             @endcomponent
 
@@ -223,7 +258,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary btn-lg w-100">Save Post</button>
+                    <button class="btn btn-primary btn-lg w-100">Update Post</button>
 
 
                     @endslot

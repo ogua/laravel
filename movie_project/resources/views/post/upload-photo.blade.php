@@ -27,8 +27,30 @@
 
                 @endslot
                 @slot('body')
+                        <p>Uploaded Photo [{{ $post->moviePhoto->count() }}]</p>
 
-{{--                    {{ $post }}--}}
+
+                        <div class="mb-3 d-flex" style="width:100%;overflow: scroll;">
+
+                        @forelse($post->moviePhoto as $mp)
+
+                        <div class="position-relative d-inline-block mr-2" >
+
+                            <img src="{{ asset('storage/photo/'.$mp->location) }}" class="rounded" style="height: 150px" alt="">
+                            <form action="{{ route('photo.destroy',$mp->id) }}" method="post" class="position-absolute" style="bottom: 5px;right: 5px;z-index: 1">
+                                @csrf
+                                @method("delete")
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="feather-trash-2"></i>
+                                </button>
+                            </form>
+
+                        </div>
+
+                        @empty
+                            <p>Not Upload Yet</p>
+                        @endforelse
+                    </div>
 
                     <form action="{{ route("photo.store") }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -43,9 +65,14 @@
                             @enderror
                         </div>
 
-                        <button class="btn btn-primary btn-lg float-right">Upload And Next</button>
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ route('post.edit',$post->id) }}" class="btn btn-primary btn-lg ">Back to Post</a>
+                            <button class="btn btn-primary btn-lg">Upload And Next</button>
+                        </div>
 
                     </form>
+
+
 
                 @endslot
             @endcomponent
