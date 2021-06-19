@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
+use function foo\func;
 
 class ArticleController extends Controller
 {
@@ -26,20 +27,20 @@ class ArticleController extends Controller
      */
     public function index()
     {
-//        DB::connection()->enableQueryLog();
-//        $articles = Article::all();
-//        foreach ($articles as $a){
-//            $a->getUser->name;
-//        }
-//        $q = DB::getQueryLog();
-//
-//        return [$q,$articles];
 
-        if(Auth::user()->role == 0){
-            $articles = Article::orderBy("id","desc")->paginate(5);
-        }else{
-            $articles = Article::where('user_id',Auth::id())->orderBy("id","desc")->paginate(5);
-        }
+//        if(Auth::user()->role == 0){
+//            $articles = Article::orderBy("id","desc")->paginate(5);
+//        }else{
+//            $articles = Article::where('user_id',Auth::id())->orderBy("id","desc")->paginate(5);
+//        }
+
+        $articles = Article::when(Auth::user()->role != 0,function($query){
+            $query->where('user_id',Auth::id());
+        })->when(request()->search,function($query){
+            $searchKey = request()->search;
+            $query->where("title","LIKE","%$searchKey%")->orWhere("description","LIKE","%$searchKey%");
+        })->with(["getUser","getPhotos"])->orderBy("id","desc")->paginate(150);
+
         return view("article.index",compact('articles'));
     }
 
@@ -175,12 +176,12 @@ class ArticleController extends Controller
 
     }
 
-    public function search(Request $request){
-        $searchKey = $request->search;
-
-        $articles = Article::where("title","LIKE","%$searchKey%")->orWhere("description","LIKE","%$searchKey%")->paginate(5);
-        return view("article.index",compact('articles'));
-
-
-    }
+//    public function search(Request $request){
+//        $searchKey = $request->search;
+//
+//        $articles = Article::where("title","LIKE","%$searchKey%")->orWhere("description","LIKE","%$searchKey%")->paginate(5);
+//        return view("article.index",compact('articles'));
+//
+//
+//    }
 }

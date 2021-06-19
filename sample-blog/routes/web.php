@@ -27,6 +27,8 @@ Route::prefix("user-dashboard")->middleware("auth")->group(function (){
     Route::get("/use-phone","HomeController@usePhone")->middleware('isAdmin')->name("use.phone");
 
     Route::resource("article","ArticleController");
+//    Route::get("article-search","ArticleController@search")->name("article.search");
+
     Route::resource("photo","PhotoController");
 
     Route::get("/profile","ProfileController@edit")->name("profile.edit");
@@ -38,7 +40,6 @@ Route::prefix("user-dashboard")->middleware("auth")->group(function (){
 
 
 
-Route::get("article-search","ArticleController@search")->name("article.search");
 
 Auth::routes();
 
