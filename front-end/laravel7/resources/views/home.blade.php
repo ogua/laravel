@@ -13,11 +13,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <i class="fas fa-home"></i>
                     {{ __('You are logged in!') }}
+                    <button class="test btn btn-primary">test</button>
+
+                        <br>
+                    {{ Request::url() }}
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+@section('foot')
+    <script>
+        $(".test").click(function (){
+            alert("hello");
+        })
+    </script>
 @endsection
