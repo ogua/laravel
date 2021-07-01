@@ -29,7 +29,7 @@
             <x-menu-title title="User Profile"></x-menu-title>
             <x-menu-item name="Your Profile" class="feather-user" link="{{ route('profile') }}"></x-menu-item>
             <x-menu-item name="Change Password" class="feather-refresh-cw" link="{{ route('profile.edit.password') }}"></x-menu-item>
-            <x-menu-item name="Update Name & Email" class="feather-message-square" link="{{ route('profile.edit.name.email') }}"></x-menu-item>
+            <x-menu-item name="Update Info" class="feather-info" link="{{ route('profile.edit.name.email') }}"></x-menu-item>
             <x-menu-item name="Update photo" class="feather-image" link="{{ route('profile.edit.photo') }}"></x-menu-item>
             <x-menu-spacer></x-menu-spacer>
 
