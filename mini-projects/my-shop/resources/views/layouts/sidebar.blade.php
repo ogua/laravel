@@ -24,6 +24,12 @@
             <x-menu-item name="Item List" class="feather-list" counter="50"></x-menu-item>
 
 
+            @if(Auth::user()->role == 0)
+            <x-menu-spacer></x-menu-spacer>
+            <x-menu-title title="User Management"></x-menu-title>
+            <x-menu-item name="Users" class="feather-users" link="{{ route('user-manager.index') }}"></x-menu-item>
+            @endif
+
             <x-menu-spacer></x-menu-spacer>
 
             <x-menu-title title="User Profile"></x-menu-title>

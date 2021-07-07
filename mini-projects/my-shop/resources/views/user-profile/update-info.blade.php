@@ -43,9 +43,9 @@
 
     $("#updateInfoModal").modal("show");
 
-    setInterval(function (){
-        $("#updateInfoModal").modal("show");
-        console.log("update info");
-    },5000);
+    // setInterval(function (){
+    //     $("#updateInfoModal").modal("show");
+    //     console.log("update info");
+    // },5000);
 
 </script>

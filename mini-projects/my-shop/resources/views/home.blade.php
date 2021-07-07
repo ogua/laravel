@@ -22,6 +22,11 @@
                         <br>
                         <br>
                     {{ Auth::user() }}
+
+                        <br>
+
+                        <button class="btn btn-primary test-alert">Test Alert</button>
+                        <button class="btn btn-primary test-toast">Test Toast</button>
                 </div>
             </div>
         </div>
@@ -34,6 +39,35 @@
     <script>
         $(".test").click(function (){
             alert("hello");
+        })
+
+        $(".test-alert").click(function (){
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Min Ga Lar Par',
+                text: 'san kyi tar par. hello hello',
+            })
+
+        });
+
+        $(".test-toast").click(function (){
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom-end',
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Signed in successfully'
+            })
         })
     </script>
 @endsection

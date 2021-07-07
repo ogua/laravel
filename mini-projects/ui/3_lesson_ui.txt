@@ -1,0 +1,74 @@
+// Basic Ui
+
+@extends('layouts.app')
+
+@section('content')
+    <x-bread-crumb>
+        <li class="breadcrumb-item"><a href="#">Tests</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Test Page</li>
+    </x-bread-crumb>
+
+    <div class="row ">
+        <div class="col-12">
+            <div class="card mb-3">
+                <div class="card-body">
+                    Here Is Test
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+@endsection
+@section('foot')
+
+@endsection
+
+
+@extends('layouts.app')
+
+@section('content')
+    <x-bread-crumb>
+        <li class="breadcrumb-item active" aria-current="page">User Manager</li>
+    </x-bread-crumb>
+
+    <div class="row ">
+        <div class="col-12">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4>
+                        <i class="feather-users"></i>
+                        Users
+                        <span class="badge badge-primary badge-pill">{{ $users->count() }}</span>
+                    </h4>
+                    <table class="table table-hover table-bordered mb-0">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Controls</th>
+                            <th>Updated At</th>
+                            <th>Created At</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+@endsection
+@section('foot')
+
+    
+
+@endsection
