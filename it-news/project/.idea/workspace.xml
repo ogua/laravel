@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6783d0b-ef9c-4c0c-8f3e-ac1ccad87bf9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Base.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/article/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/article/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/article/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/article/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/category/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/category/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/category/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sample.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../front-end/laravel7-frame.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/css/app.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/css/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/item/item1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/item/item2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/item/item3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/item/item4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/avatar9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/img/user/me.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/animate_it/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/chart_js/chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/counter_up/counter_up.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/data_table/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/data_table/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/data_table/jquery.dataTables.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/data_table/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/feather.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/fonts/Feather.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/fonts/Feather.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/fonts/Feather.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/feather-icons-web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/image_hover/css/imagehover.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/image_hover/css/imagehover.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/image_hover/css/imagehover.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/image_hover/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/config.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/fonts/slick.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/fonts/slick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/fonts/slick.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/fonts/slick.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/jquery-3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick-theme.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick-theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/slick/slick.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/font/summernote.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/font/summernote.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/font/summernote.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/font/summernote.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ar-AR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ar-AR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-bg-BG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-bg-BG.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ca-ES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ca-ES.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-cs-CZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-cs-CZ.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-da-DK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-da-DK.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-de-DE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-de-DE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-el-GR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-el-GR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-es-ES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-es-ES.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-es-EU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-es-EU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-fa-IR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-fa-IR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-fi-FI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-fi-FI.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-fr-FR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-fr-FR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-gl-ES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-gl-ES.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-he-IL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-he-IL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-hr-HR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-hr-HR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-hu-HU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-hu-HU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-id-ID.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-id-ID.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-it-IT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-it-IT.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ja-JP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ja-JP.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ko-KR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ko-KR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-lt-LT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-lt-LT.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-lt-LV.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-lt-LV.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-mn-MN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-mn-MN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-nb-NO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-nb-NO.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-nl-NL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-nl-NL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-pl-PL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-pl-PL.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-pt-BR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-pt-PT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-pt-PT.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ro-RO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ro-RO.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ru-RU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ru-RU.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sk-SK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sk-SK.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sl-SI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sl-SI.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sr-RS-Latin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sr-RS-Latin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sr-RS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sr-RS.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sv-SE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-sv-SE.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ta-IN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-ta-IN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-th-TH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-th-TH.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-tr-TR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-tr-TR.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-uk-UA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-uk-UA.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-uz-UZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-uz-UZ.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-vi-VN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-vi-VN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-zh-CN.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/lang/summernote-zh-TW.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-bs4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-bs4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-bs4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-bs4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-bs4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-bs4.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-lite.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-lite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-lite.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-lite.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-lite.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote-lite.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/summer_note/summernote.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/venobox/venobox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/venobox/venobox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/jquery.waypoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/jquery.waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/noframework.waypoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/noframework.waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/shortcuts/infinite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/shortcuts/infinite.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/shortcuts/inview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/shortcuts/inview.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/shortcuts/sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/shortcuts/sticky.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/waypoint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/waypoints.debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/zepto.waypoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/way_point/zepto.waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/dashboard/vendor/wow/wow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front-end/laravel7-frame/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1uAdx03OC0yCSfpnxIFb34DPkB8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/user-profile" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/user-profile" />
+      <recent name="$PROJECT_DIR$/public/dashboard/img" />
+      <recent name="$PROJECT_DIR$/resources/sass" />
+      <recent name="$PROJECT_DIR$/public/dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/user-profile" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6783d0b-ef9c-4c0c-8f3e-ac1ccad87bf9" name="Default Changelist" comment="" />
+      <created>1624112571875</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624112571875</updated>
+      <workItem from="1624112575446" duration="9808000" />
+      <workItem from="1624290767501" duration="7963000" />
+      <workItem from="1624400592218" duration="6000" />
+      <workItem from="1625041586877" duration="184000" />
+      <workItem from="1631385434746" duration="14770000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
